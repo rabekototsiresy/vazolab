@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useEffect } from 'react';
 import NAvbar from '../../components/navbar';
 import {Link, Outlet,useLocation } from 'react-router-dom';
 import './profile.css';
@@ -7,7 +7,7 @@ import { useQueryMusicByFivGET } from '../../../common/hooks/useQueryMusic';
 import Loader from '../../components/loader';
 import { useDispatch, useSelector } from 'react-redux';
 import { StateI } from '../../../common/interfaces/redux/StateI';
-import { addMusic, getCountMusicInFiv } from '../../../core/redux';
+import { addMusic, getCountMusicInFiv, playMusicToggle } from '../../../core/redux';
 import avatar from '../../../common/assets/images/profile.png'
 
 function Profile() {
@@ -53,6 +53,9 @@ function Profile() {
                 break;
         }
     }
+    useEffect(()=>{
+        dispatch(playMusicToggle(null));
+    },[])
   return (
     <Fragment>
         <Loader enabled={isLoading}/>

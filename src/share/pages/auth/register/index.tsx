@@ -1,5 +1,5 @@
 /* eslint-disable jsx-a11y/alt-text */
-import React,{ SyntheticEvent, useState } from 'react'
+import React,{ SyntheticEvent, useEffect, useState } from 'react'
 import { Link } from 'react-router-dom';
 import lys from '../../../../common/assets/images/fleur_de_lys.jpeg';
 import NAvbar from '../../../components/navbar';
@@ -17,6 +17,8 @@ import { useNavigate } from 'react-router-dom';
 import { HexColorPicker } from "react-colorful";
 import { ReactComponent as Foulard} from '../../../../common/assets/images/foulard-sm.svg';
 import FoulardSM from '../../../components/svg/foulardSm';
+import { playMusicToggle } from '../../../../core/redux';
+import { useDispatch } from 'react-redux';
 
 
 function Register() {
@@ -48,7 +50,7 @@ function Register() {
   const { mutate,isLoading: isLoadRegister } = useMutationAuthRegisterPOST();
   const alert = useAlert();
   const navigate = useNavigate();
-
+  const dispatch = useDispatch();
   const handleInput = (e:any)=>{
     setDioPayload((prev)=>{
       return {
@@ -107,6 +109,10 @@ function Register() {
   const switchGetColor = (e)=>{
     setCurrentColorValue(e.target.value);
   }
+
+  useEffect(()=>{
+    dispatch(playMusicToggle(null))
+  },[])
 
   const getColor = (color)=>{
     if(currentColorValue === 1){

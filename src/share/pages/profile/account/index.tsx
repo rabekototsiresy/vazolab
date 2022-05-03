@@ -1,9 +1,11 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { RiAccountPinBoxLine, RiMapPinUserFill } from 'react-icons/ri';
 import { FaMapPin, } from 'react-icons/fa';
 import { decodeToken, getToken } from '../../../../common/utils/token';
 import { GiFlyingFlag } from 'react-icons/gi';
 import {  IoMdMap } from 'react-icons/io';
+import { playMusicToggle } from '../../../../core/redux';
+import { useDispatch } from 'react-redux';
 
 
 
@@ -11,6 +13,10 @@ function Account() {
   const token = getToken('token') || '';
     const [infoProfile, setInfoProfile] = useState(decodeToken(token));
     const { fiv_name,fiv_rang,faritra,diosezy,access_name} = infoProfile.sub;
+    const dispatch = useDispatch()
+    useEffect(()=>{
+      dispatch(playMusicToggle(null));
+    },[])
   return (
     <div className="table-responsive wishlist-table margin-bottom-none">
                     <table className="table">

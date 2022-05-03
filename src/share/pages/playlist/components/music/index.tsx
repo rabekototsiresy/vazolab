@@ -1,4 +1,4 @@
-import React,{ useState  } from 'react'
+import React,{ useEffect, useState  } from 'react'
 import { MdInfo } from 'react-icons/md';
 import { useQueryClient } from 'react-query';
 import { useDispatch, useSelector } from 'react-redux';
@@ -8,7 +8,7 @@ import { useQueryMusicAllGET } from '../../../../../common/hooks/useQueryMusic';
 import { IResponse } from '../../../../../common/interfaces/IResponse';
 import { MusicI } from '../../../../../common/interfaces/MusicI';
 import { StateI } from '../../../../../common/interfaces/redux/StateI';
-import { addMusic, getMusicPaginate, toggleLoader } from '../../../../../core/redux';
+import { addMusic, getMusicPaginate, playMusicToggle, toggleLoader } from '../../../../../core/redux';
 import ItemPlaylist from '../ItemPlaylist';
 import playlisstStyle from '../../playlist.module.css'
 function MusicPlaylist() {
@@ -38,6 +38,9 @@ function MusicPlaylist() {
     dispatch(getMusicPaginate((cp*6)-6,(cp*6)));
     
   }
+  useEffect(()=>{
+    dispatch(playMusicToggle(null))
+  },[])
   return (
     <div className={`mb-5 ps-2 col-md-12 ${playlisstStyle.contentPlaylist} px-3 px-sm-0 px-md-0 pb-5 mb-3`}>
               

@@ -134,6 +134,9 @@ function AddMusic() {
 
       }) 
   }
+  useEffect(()=>{
+    dispatch(playMusicToggle(null))
+  },[])
   return (
     <div className=" ">
     <div className="card mt-3 d-flex p-3">

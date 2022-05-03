@@ -1,11 +1,11 @@
-import React, { Fragment, useState } from 'react';
+import React, { Fragment, useEffect, useState } from 'react';
 import {useAlert} from 'react-alert';
 import {useNavigate } from 'react-router-dom';
 import { useMutationAuthLoginPOST } from '../../../../common/hooks/useMutationAuth';
 import { IResponse } from '../../../../common/interfaces/IResponse';
 import Loader from '../../../components/loader';
 import NAvbar from '../../../components/navbar';
-import { manageToken, toggleLogged } from '../../../../core/redux'
+import { manageToken, playMusicToggle, toggleLogged } from '../../../../core/redux'
 import {setToken} from '../../../../common/utils/token';
 import { useDispatch,useSelector } from 'react-redux';
 import './login.css'
@@ -42,6 +42,9 @@ function Login() {
         }
       })
     }
+    useEffect(()=>{
+      dispatch(playMusicToggle(null))
+    },[])
 
  
   return (

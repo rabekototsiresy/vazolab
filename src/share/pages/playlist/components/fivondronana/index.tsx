@@ -1,10 +1,10 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useDispatch } from 'react-redux';
 import djembe from '../../../../../common/assets/images/djembe.jpeg'
 import { useQueryFivGET } from '../../../../../common/hooks/useQueryFiv';
 import { FivI } from '../../../../../common/interfaces/FivI';
 import { IResponse } from '../../../../../common/interfaces/IResponse';
-import { toggleLoader } from '../../../../../core/redux';
+import { playMusicToggle, toggleLoader } from '../../../../../core/redux';
 import FoulardSM from '../../../../components/svg/foulardSm';
 
 function Fivondronana() {
@@ -17,6 +17,9 @@ function Fivondronana() {
     },(error)=>{
       console.log(error);
     })
+    useEffect(()=>{
+        dispatch(playMusicToggle(null));
+      },[])
     dispatch(toggleLoader(isLoading))  
     return (
     <div className='row mt-2 mb-5 px-2'>

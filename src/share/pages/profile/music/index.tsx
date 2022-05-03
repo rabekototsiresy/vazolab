@@ -7,7 +7,7 @@ import { MusicI } from '../../../../common/interfaces/MusicI';
 import { StateI } from '../../../../common/interfaces/redux/StateI';
 import { goToLoginUnAuthorized } from '../../../../common/utils/goToLoginUnAuthorized';
 import { decodeToken, getToken } from '../../../../common/utils/token';
-import { addMusic, getMusicPaginate, toggleLoader } from '../../../../core/redux';
+import { addMusic, getMusicPaginate, playMusicToggle, toggleLoader } from '../../../../core/redux';
 import ItemPlaylist from '../../playlist/components/ItemPlaylist';
 import Pagination from 'react-responsive-pagination';
 import { useIsFetching } from 'react-query';
@@ -53,6 +53,9 @@ function MusicInAccount() {
       dispatch(getMusicPaginate((cp*6)-6,(cp*6)));
       
     }
+    useEffect(()=>{
+      dispatch(playMusicToggle(null))
+    },[])
 
     dispatch(toggleLoader(isLoading||isFetching))
 
