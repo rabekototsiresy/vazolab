@@ -37,7 +37,7 @@ function TopMusic() {
                         </b>
                     </h3>
                     <p>
-                        <SpanCustomize text="Hira maro isankarazany" />
+                        <SpanCustomize text="Hira maro isan-karazany" />
                     </p>
                 </div>
                 <div className='d-flex flex-column '>
