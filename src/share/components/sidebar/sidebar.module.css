@@ -1,0 +1,14 @@
+.sidebar{
+    position: fixed;
+    height: 100vh;
+    width: 100%;
+    background-color: rebeccapurple;
+    z-index: 10;
+    padding-top: 20px;
+}
+.bottomBorder{
+    padding: 2px 0;
+    background-color: #fff;
+    width: 20%;
+    margin-top: 10px;
+}

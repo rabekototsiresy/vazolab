@@ -1,0 +1,81 @@
+.imageTopPlaylist{
+    height: 40vh;
+    background-color: purple;
+    background-image: url('../../../common//assets/images/djembe.jpeg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* background-attachment: fixed; */
+}
+
+.ptext{
+    background-color: rgba(255, 255, 255, 0.7);
+}
+
+
+/* STYLES SUR LE CHAMP DE TEXTE AVEC BOUTON */
+.formSearch {
+    display:flex;
+    flex-direction:row;
+    
+    border:1px solid grey;
+  
+    padding:2px;
+}
+.inputSearch {
+    flex-grow:2;
+    border:none;
+}
+.inputSearch:focus {
+    outline: none;
+
+}
+.buttonSearch {
+    border:1px solid blue;
+    background:blue;
+    color:white;
+}
+.audio{
+    width: 100%;
+}
+.contentPlaylist{
+    /* padding: 133px 0; */
+    padding-top: 0;
+}
+
+/* playlist styles*/
+.item{
+    display: flex;
+    align-items: center;
+    background-color: #ddd;
+    padding: 5px 0;
+    
+
+}
+
+.itemPlay{
+    width: 70px;
+    text-align: center;
+}
+.itemImage{
+    flex-grow: 1;
+
+}
+.itemTitle{
+    flex-basis: 45%;
+
+
+}
+.itemFiv{
+    flex-grow: 5;
+
+}
+.itemDuration{
+    /* flex-basis: 35%; */
+    text-align: center;
+    /* flex-grow: 5; */
+    /* text-align: center; */
+
+}
+.contentImageMusic{
+    border-right: 2px solid #fff;
+}

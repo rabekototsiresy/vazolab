@@ -1,0 +1,7 @@
+.player-bottom{
+    padding: 20p;
+    width: 100%;
+    background-color: rebeccapurple;
+    position: fixed;
+    bottom: 0;
+}

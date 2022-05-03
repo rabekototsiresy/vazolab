@@ -1,0 +1,51 @@
+.imageTop{
+    height: 80vh;
+    background-image: url('../../../common/assets/images/fire.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+/* STYLES SUR LE CHAMP DE TEXTE AVEC BOUTON */
+.formSearch {
+    display:flex;
+    flex-direction:row;
+    
+    border:1px solid grey;
+  
+    padding:2px;
+}
+.inputSearch {
+    flex-grow:2;
+    border:none;
+    
+}
+.inputSearch:focus {
+    outline: none;
+
+}
+.buttonSearch {
+    border:1px solid blue;
+    background:blue;
+    color:white;
+}
+
+/* MUSIC TOP */
+.contentTopMusic{
+    
+}
+.listMusic{
+
+}
+.purple{
+    color: purple;
+}
+.listyLinkNone{
+    text-decoration: none;
+    color: #fff;
+    border-bottom: 2px solid white;
+}
+
+.fouladrd{
+    background-color: red;
+}

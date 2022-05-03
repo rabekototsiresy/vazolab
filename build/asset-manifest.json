@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/static/css/main.7874a087.css",
+    "main.js": "/static/js/main.77451ec4.js",
+    "static/js/787.114151cf.chunk.js": "/static/js/787.114151cf.chunk.js",
+    "static/media/fire.jpg": "/static/media/fire.e7b037516540108a134a.jpg",
+    "static/media/profile.png": "/static/media/profile.332f45425e5ce4dac574.png",
+    "static/media/fleur_de_lys.jpeg": "/static/media/fleur_de_lys.836e2ee0c2bebc6b3d06.jpeg",
+    "static/media/djembe.jpeg": "/static/media/djembe.e592551f4fd8c11f2c47.jpeg",
+    "static/media/djembe.jpg": "/static/media/djembe.ba3827c2d086255c2b1c.jpg",
+    "static/media/revicons.eot": "/static/media/revicons.a77de540a38981833f9e.eot",
+    "static/media/revicons.ttf": "/static/media/revicons.57fd05d4ae650374c8de.ttf",
+    "static/media/revicons.woff": "/static/media/revicons.e8746a624ed098489406.woff",
+    "index.html": "/index.html",
+    "main.7874a087.css.map": "/static/css/main.7874a087.css.map",
+    "main.77451ec4.js.map": "/static/js/main.77451ec4.js.map",
+    "787.114151cf.chunk.js.map": "/static/js/787.114151cf.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7874a087.css",
+    "static/js/main.77451ec4.js"
+  ]
+}

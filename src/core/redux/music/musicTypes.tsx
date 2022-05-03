@@ -1,0 +1,5 @@
+export const ADD_MUSIC = 'ADD_MUSIC';
+export const PLAY_MUSIC =  'PLAY_MUSIC';
+export const DELETE_MUSIC = 'DELETE_MUSIC';
+export const GET_COUNT_MUSIC_BY_FIV = 'GET_COUNT_MUSIC_BY_FIV';
+export const GET_MUSIC_PAGINATE = 'GET_MUSIC_PAGINATE';
