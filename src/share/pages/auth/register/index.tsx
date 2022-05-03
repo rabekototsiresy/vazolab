@@ -90,6 +90,15 @@ function Register() {
 
   const submitRegister = (e:SyntheticEvent)=>{
     e.preventDefault();
+    if(!primaryColor){
+      alert.info("Misafidiana lokon'ny fehitenada voalohany!");
+      return;
+    }
+    if(!secondaryColor){
+      alert.info("Misafidiana lokon'ny fehitenada faharoa!")
+      return;
+
+    }
     dioPayload.primary_color = primaryColor;
     dioPayload.secondary_color = secondaryColor;
     mutate(dioPayload,{
@@ -194,22 +203,25 @@ function Register() {
             </div>
 
           </div>
-              <div className='d-flex flex-row'>
+              <div className='d-flex flex-row flex-column align-items-center' >
               <HexColorPicker 
                 color={color} onChange={getColor} 
               />
-              <div className='d-flex justify-content-center w-100'>
+              <div className='d-flex flex-column justify-content-center w-100'>
                 <span>
-                  <span>
-                    <b>1</b>
-                    <input checked type="radio"  name="color" onChange={switchGetColor} value={1} id="" />
-                    <b className='ms-2'>2</b>
-                    <input type="radio"  name="color" onChange={switchGetColor}  id="" value={2}/>
-                  </span>
+                    <div>
+                      <b>1</b>
+                      <input checked type="radio"  name="color" onChange={switchGetColor} value={1} id="" />
+                    </div>
+                    <div>
+                      <b className=''>2</b>
+                      <input type="radio"  name="color" onChange={switchGetColor}  id="" value={2}/>
+                    </div>
                 </span>
                 {/* <Foulard /> */}
-                <FoulardSM primaryColor={primaryColor} secondaryColor={secondaryColor} height={200}/>
+                
               </div>
+              <FoulardSM primaryColor={primaryColor} secondaryColor={secondaryColor} height={200}/>
             </div>
           <div className="row  d-flex justify-content-center align-items-center">
           <div className="mb-3 col-md-6">
