@@ -58,7 +58,7 @@ function Profile() {
     },[])
   return (
     <Fragment>
-        <Loader enabled={isLoading}/>
+        {/* <Loader enabled={isLoading}/> */}
       <NAvbar  toggleSidebar={()=>{}} />
       <div className="container padding-bottom-3x mb-2 my-5 pb-5">
         <div className="row">

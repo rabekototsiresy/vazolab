@@ -11,6 +11,7 @@ import { StateI } from '../../../../../common/interfaces/redux/StateI';
 import { addMusic, getMusicPaginate, playMusicToggle, toggleLoader } from '../../../../../core/redux';
 import ItemPlaylist from '../ItemPlaylist';
 import playlisstStyle from '../../playlist.module.css'
+import { SpinnerCircular } from 'spinners-react';
 function MusicPlaylist() {
       // const [musics, setmusics] = useState([]);
   const { mutate } = useMutationMusicDELETE();
@@ -19,9 +20,11 @@ function MusicPlaylist() {
   const musics = useSelector((state: StateI)=>state.music.musicPaginate);
   const totalMusicCount = useSelector((state:StateI)=>state.music.countMusicInFiv)
   const totalPages = Math.ceil(totalMusicCount/6)
+  const loader = useSelector((state:StateI)=>state.global.loader)
+
 
   const dispatch = useDispatch();
-  const {isLoading} = useQueryMusicAllGET((data:any)=>{
+  const {isLoading,isFetching} = useQueryMusicAllGET((data:any)=>{
     const result = data?.data as IResponse
     dispatch(addMusic(result.data))
     dispatch(getMusicPaginate(0,6));
@@ -44,6 +47,9 @@ function MusicPlaylist() {
   return (
     <div className={`mb-5 ps-2 col-md-12 ${playlisstStyle.contentPlaylist} px-3 px-sm-0 px-md-0 pb-5 mb-3`}>
               
+    <div className="d-flex justify-content-center">
+      <SpinnerCircular enabled={loader || isLoading || isFetching } />
+    </div>
     {
       musics.length === 0 
       ?

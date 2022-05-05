@@ -35,7 +35,7 @@ function App() {
 
   return (
     <div className="app">
-      <Loader enabled={isLoading}/>
+      {/* <Loader enabled={isLoading}/> */}
       {showModal && <Sidebar toggleSidebar={toggleSidebar} />}
      <Routes>
        <Route  path='/' element={<Home  toggleSidebar={toggleSidebar} />}></Route>

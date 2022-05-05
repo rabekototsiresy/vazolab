@@ -53,7 +53,7 @@ function SearchPlaylist() {
   }
   return (
     <div>
-      <Loader enabled={isLoading || searching  ||isFetching} />
+      <Loader enabled={searching} />
     <div className={` container-fluid ${imageTopStyle.imageTopPlaylist}`}>
       <div className="row d-flex h-100 align-items-center justify-content-center">
       <div className='col-md-6 d-flex flex-column justify-content-center'>

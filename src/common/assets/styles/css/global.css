@@ -33,7 +33,7 @@ body {
 .loader{
   display: flex;
   height: 100vh;
-  background-color: rgba(102,51,153,0.8);
+  background-color: rgba(168, 164, 173, 0.8);
   justify-content: center;
   align-items: center;
   position: fixed;

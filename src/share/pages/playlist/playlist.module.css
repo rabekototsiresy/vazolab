@@ -63,6 +63,7 @@
 }
 .itemTitle{
     flex-basis: 45%;
+    border-left: 2px solid #fff;
 
 
 }

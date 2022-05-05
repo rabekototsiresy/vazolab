@@ -5,23 +5,26 @@ import imageFiv from '../../../../common/assets/images/camp.jpg';
 import { Ifiv } from '../../../../common/utils/IFiv';
 import SpanCustomize from '../../../components/spanCustomize';
 import { NavLink } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useQueryMusicLimitGET } from '../../../../common/hooks/useQueryMusic';
 import { IResponse } from '../../../../common/interfaces/IResponse';
 import { toggleLoader } from '../../../../core/redux';
 import EmptyList from '../../../components/emptyList';
 import { MusicI } from '../../../../common/interfaces/MusicI';
 import ItemPlaylist from '../../playlist/components/ItemPlaylist';
+import { SpinnerCircular } from 'spinners-react';
+import { StateI } from '../../../../common/interfaces/redux/StateI';
 function TopMusic() {
     const [musics, setMusics] = useState([])
     const dispatch = useDispatch();
+    const loading = useSelector((state:StateI)=>state.global.loader);
     
     const {isLoading,isFetching} = useQueryMusicLimitGET((response)=>{
       setMusics(response.data.data);
     },(error)=>{
       console.log(error);
     })
-//    dispatch(toggleLoader(isLoading))
+   dispatch(toggleLoader(isLoading))
   
 
   return (
@@ -41,6 +44,9 @@ function TopMusic() {
                     </p>
                 </div>
                 <div className='d-flex flex-column '>
+                  <div className='d-flex justify-content-center'>
+                    <SpinnerCircular enabled={isLoading||isFetching || loading} /> 
+                  </div>
                 {
                     musics.length === 0 
                     ?

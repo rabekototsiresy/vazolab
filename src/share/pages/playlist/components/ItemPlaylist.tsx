@@ -82,6 +82,16 @@ function ItemPlaylist(props: PropsItemPlaysitI) {
         }
         return false;
     }
+
+    const getTitle = (title:string) =>{
+
+        const titleSplited = title.split(" ");
+        if(titleSplited.length>=2){
+            return titleSplited[0]+"...";
+        }
+
+        return title
+    }
   return (
     <div key={id} className={` ps-3 pe-0 my-1 border-bottom ${playlistStyle.item}`}>
         <div className={playlistStyle.itemPlay}>
@@ -98,12 +108,12 @@ function ItemPlaylist(props: PropsItemPlaysitI) {
             <img src={djembe} alt="..." className=" img-fluid radius50" width={50} />
         </div>
         <div className={`px-2 ${playlistStyle.itemTitle}`}>
-            <span className='d-md-none d-sm-none'>
+            <span className='d-block d-md-none d-sm-none'>
             {
-                title.length <= 10 ? title : `${title.substring(0,10)}...`
+                getTitle(title).length <= 10 ? getTitle(title) : `${(getTitle(title) as unknown as string).substring(0,10)}...`
             }
             </span>
-            <span>
+            <span className='d-none d-sm-block d-md-block'>
                 {title}
             </span>
         </div>

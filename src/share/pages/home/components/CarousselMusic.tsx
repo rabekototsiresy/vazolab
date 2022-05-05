@@ -12,6 +12,7 @@ import { FaMapPin } from 'react-icons/fa';
 import { GiFlyingFlag } from 'react-icons/gi';
 import { IoMdMap } from 'react-icons/io';
 import { RiMapPinUserFill } from 'react-icons/ri';
+import {SpinnerCircular	 } from 'spinners-react';
 
 const responsive = {
     superLargeDesktop: {
@@ -43,7 +44,7 @@ function CarousselMusic() {
   },(error)=>{
     console.log(error);
   })
-  dispatch(toggleLoader(isLoading))
+  // dispatch(toggleLoader(isLoading))
 
 
 
@@ -60,6 +61,12 @@ function CarousselMusic() {
             </p>
         </div>
         <div>
+          <div>
+            
+          </div>
+          <div className='d-flex justify-content-center'>
+            {<SpinnerCircular enabled={isLoading}/>}
+          </div>
         {
           fivList.length === 0 
           ? 

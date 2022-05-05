@@ -11,6 +11,7 @@ import { addMusic, getMusicPaginate, playMusicToggle, toggleLoader } from '../..
 import ItemPlaylist from '../../playlist/components/ItemPlaylist';
 import Pagination from 'react-responsive-pagination';
 import { useIsFetching } from 'react-query';
+import { SpinnerCircular } from 'spinners-react';
 
 
 function MusicInAccount() {
@@ -62,6 +63,9 @@ function MusicInAccount() {
   return (
     <div>
         <div className="table-responsive wishlist-table margin-bottom-none">
+              <div className="d-flex justify-content-center">
+                <SpinnerCircular enabled={isLoading || isFetching } />
+              </div>
                   {
                    musics.length === 0 
                    ?

@@ -29,7 +29,7 @@ function Playlist() {
           </div>
         </div>
         <footer className='bgprimary-color text-white position-fixed bottom-0 w-100 border d-flex justify-content-center p-2'>
-          @copyright - 20222 #aldo
+          @copyright - 20222 #Aldo
         </footer>
     </div>
   )
