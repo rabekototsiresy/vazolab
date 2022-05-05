@@ -74,7 +74,7 @@ function Login() {
                 <div className="input-group mb-3">
                     <span className="input-group-text" id="basic-addon1"><i className="fa fa-lock"></i></span>
                     <input 
-                      type="text" 
+                      type="password" 
                       className="form-control" 
                       placeholder="Teny miafina" 
                       aria-label="Teny miafina"

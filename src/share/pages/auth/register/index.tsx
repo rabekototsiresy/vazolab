@@ -211,11 +211,11 @@ function Register() {
                 <span>
                     <div>
                       <b>1</b>
-                      <input checked type="radio"  name="color" onChange={switchGetColor} value={1} id="" />
+                      <input checked type="radio"  name="color" onChange={switchGetColor} value={1} id="primary" />
                     </div>
                     <div>
                       <b className=''>2</b>
-                      <input type="radio"  name="color" onChange={switchGetColor}  id="" value={2}/>
+                      <input type="radio"  name="color" onChange={switchGetColor}  id="secondary" value={2}/>
                     </div>
                 </span>
                 {/* <Foulard /> */}

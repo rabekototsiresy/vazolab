@@ -58,7 +58,7 @@ function SearchPlaylist() {
       <div className="row d-flex h-100 align-items-center justify-content-center">
       <div className='col-md-6 d-flex flex-column justify-content-center'>
         <h3 className='text-center my-3'>
-          <b className={`px-5 py-4 primary-color ${imageTopStyle.ptext}`}>Hira sy fanentanana skoto</b>
+          <b className={`px-5 py- primary-color ${imageTopStyle.ptext}`}>Hira skoto</b>
         </h3>
         <p className='text-center'>
           <SpanCustomize text="Sambatra ny manome nohon'ny mandray"/>

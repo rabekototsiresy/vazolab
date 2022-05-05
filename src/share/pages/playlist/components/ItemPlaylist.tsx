@@ -94,11 +94,18 @@ function ItemPlaylist(props: PropsItemPlaysitI) {
             }
            
         </div>
-        <div className={`px-2 py-1 ${playlistStyle.contentImageMusic}`}>
+        <div className={` d-none d-sm-block d-md-block px-2 py-1 ${playlistStyle.contentImageMusic}`}>
             <img src={djembe} alt="..." className=" img-fluid radius50" width={50} />
         </div>
         <div className={`px-2 ${playlistStyle.itemTitle}`}>
-            {title}
+            <span className='d-md-none d-sm-none'>
+            {
+                title.length <= 10 ? title : `${title.substring(0,10)}...`
+            }
+            </span>
+            <span>
+                {title}
+            </span>
         </div>
         <div hidden={hiddenFaritra()} className={`${playlistStyle.itemFiv} d-none d-md-block d-sm-block`}>
              { 
