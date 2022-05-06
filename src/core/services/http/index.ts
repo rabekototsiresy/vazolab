@@ -3,8 +3,8 @@ import { useNavigate } from "react-router-dom";
 // import jwtDecode from "jwt-decode";
 import { getToken } from '../../../common/utils/token';
 export const http = axios.create({
-    baseURL: 'http://localhost:9090/api/v1',
-    // baseURL: 'https://apiskoto.kajy-lab.com/api/v1',
+    // baseURL: 'http://localhost:9090/api/v1',
+    baseURL: 'https://apiskoto.kajy-lab.com/api/v1',
   });
 
 
