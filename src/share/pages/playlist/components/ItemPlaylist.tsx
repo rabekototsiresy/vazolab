@@ -117,7 +117,7 @@ function ItemPlaylist(props: PropsItemPlaysitI) {
                 {title}
             </span>
         </div>
-        <div hidden={hiddenFaritra()} className={`${playlistStyle.itemFiv} d-none d-md-block d-sm-block`}>
+        <div hidden={hiddenFaritra()} className={`${playlistStyle.itemFiv} d-none d-md-block d-sm-none`}>
              { 
              fivondronana?.rang && fivondronana.rang 
              && 
