@@ -64,7 +64,7 @@ function SearchPlaylist() {
           <SpanCustomize text="Sambatra ny manome nohon'ny mandray"/>
         </p>
         
-        <form className={imageTopStyle.formSearch} onSubmit={search} hidden={!showBarSearch()}>
+        <form className={`p-2 ${imageTopStyle.formSearch}`} onSubmit={search} hidden={!showBarSearch()}>
           <input onChange={(e)=>setSearchTerm(e.target.value)} className={imageTopStyle.inputSearch} />
           <button  className={imageTopStyle.buttonSearch} type="submit">HITADY</button>
         </form>
