@@ -10,7 +10,7 @@ section .section-title {
     text-transform: uppercase;
 }
 #footer {
-    background: purple !important;
+    background: rebeccapurple !important;
 }
 #footer h5{
 	padding-left: 10px;

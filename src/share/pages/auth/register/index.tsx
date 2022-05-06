@@ -60,10 +60,24 @@ function Register() {
     })
   }
   const handleFaritra = (option:any)=>{
+    console.log(option)
     setDioPayload((prev)=>{
+      /**
+       * if faritra exit: 
+       * example id: 8
+          id_diosezy: 1
+          label: "Imerinafovoany"
+          name: "Imerinafovoany"
+          value: 8
+
+          not exist: 
+          example: 
+          label: "test"
+          value: "test"
+       */
       return {
         ...prev,
-        faritra: option.label
+        faritra: option
       }
     })
 
@@ -203,6 +217,8 @@ function Register() {
             </div>
 
           </div>
+          <label htmlFor="numero" className="form-label">Lokon'ny fehitendan(1)(2):</label>
+
               <div className='d-flex flex-row flex-column align-items-center' >
               <HexColorPicker 
                 color={color} onChange={getColor} 

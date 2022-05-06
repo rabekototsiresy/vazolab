@@ -28,7 +28,7 @@ function ImageTop() {
       <div className="row d-flex h-100 align-items-center justify-content-center">
       <div className='col-md-6 d-flex flex-column justify-content-center'>
         <h3 className='text-center primary-color '>
-          <b className='p-4 text-white'>Hira sy fanentanana skoto</b>
+          <b className='p-4 text-white'>Hira skoto</b>
         </h3>
         <p className='text-center text-primary '>
           <span className='bg-green p-2 text-white '>

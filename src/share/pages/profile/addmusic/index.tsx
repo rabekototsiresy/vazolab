@@ -15,6 +15,7 @@ import { useQueryClient } from 'react-query';
 import { StateI } from '../../../../common/interfaces/redux/StateI';
 import { MdOutlineLibraryMusic } from 'react-icons/md';
 import { GiMusicalScore } from 'react-icons/gi';
+import Loader from '../../../components/loader';
 
 
 function AddMusic() {
@@ -26,6 +27,8 @@ function AddMusic() {
   const [imageLyrics, setImageLyrics] = useState<any>('');
   const [audioPlaying, setAudioPlaying] = useState('')
   const loader = useSelector((state:StateI)=>state.global.loader);
+  const [isoading, setIsoading] = useState(false);
+
   const alert = useAlert();
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -93,6 +96,7 @@ function AddMusic() {
 
   const submitMusic = (e)=>{
     e.preventDefault();
+    setIsoading(true);
     const formData:any = new FormData();
     formData.append('file',audioFile);
     
@@ -124,14 +128,15 @@ function AddMusic() {
     dispatch(toggleLoader(true))
     http.post('/hira',formData).then((res)=>{
       dispatch(toggleLoader(false))
+      setIsoading(false);
       alert.success(`Tafiditra soamatsara ny hira: ${title}`)
       queryClient.invalidateQueries(['musicbyfiv-api',id_fiv])
       navigate('/profile/musics')
     })
       .catch((e)=>{
         console.log(e)
-        dispatch(toggleLoader(false))
-
+        dispatch(toggleLoader(false));
+        setIsoading(false);
       }) 
   }
   useEffect(()=>{
@@ -139,6 +144,7 @@ function AddMusic() {
   },[])
   return (
     <div className=" ">
+      <Loader enabled={loader || isoading}/>
     <div className="card mt-3 d-flex p-3">
         
       <div className='d-flex align-items-center justify-content-center'>

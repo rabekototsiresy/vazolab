@@ -18,7 +18,7 @@ function Footer() {
 			</div>	
 			<div className="row">
 				<div className="col-xs-12 col-sm-12 col-md-12 text-center text-white">
-					<p className="h6">©Aldo Janny | 2022</p>
+					<p className="h6">Antilin'i Madagasikara | 2022</p>
 				</div>
 				<hr />
 			</div>	
