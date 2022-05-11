@@ -30,7 +30,7 @@ function Register() {
   const [color, setColor] = useState("#aabbcc");
   const [primaryColor, setPrimaryColor] = useState('');
   const [secondaryColor, setSecondaryColor] = useState('');
-  const [currentColorValue, setCurrentColorValue] = useState(1)
+  const [currentColorValue, setCurrentColorValue] = useState(null)
   const [diosezy, setDiosezy] = useState<IDiosezy[]>([]);
   const [dioPayload,setDioPayload] = useState(dataRegister);
   const [faritraList, setFaritraList] = useState<IFaritra[]>([]);
@@ -138,9 +138,13 @@ function Register() {
   },[])
 
   const getColor = (color)=>{
-    if(currentColorValue === 1){
+    console.log(currentColorValue,'current',color)
+    if(currentColorValue == 1){
+      console.log("prim");
       setPrimaryColor(color)
-    }else{
+    }else if(currentColorValue == 2){
+      console.log("second");
+
       setSecondaryColor(color);
     }
   }
@@ -217,27 +221,31 @@ function Register() {
             </div>
 
           </div>
-          <label htmlFor="numero" className="form-label">Lokon'ny fehitendan(1)(2):</label>
-
-              <div className='d-flex flex-row flex-column align-items-center' >
-              <HexColorPicker 
-                color={color} onChange={getColor} 
-              />
-              <div className='d-flex flex-column justify-content-center w-100'>
+          <label htmlFor="numero" className="form-label">Lokon'ny fehitenda(1)(2):</label>
+          <div className='d-flex flex-column justify-content-center w-100'>
                 <span>
                     <div>
                       <b>1</b>
-                      <input checked type="radio"  name="color" onChange={switchGetColor} value={1} id="primary" />
+                      <input  type="radio"  name="color" onChange={switchGetColor} value={1} id="primary" />
+                      <i>Tokon-tany</i>
                     </div>
                     <div>
                       <b className=''>2</b>
                       <input type="radio"  name="color" onChange={switchGetColor}  id="secondary" value={2}/>
+                      <i>Sisiny</i>
                     </div>
                 </span>
                 {/* <Foulard /> */}
                 
               </div>
+              <div className='d-flex flex-column flex-md-row justify-content-around align-items-center' >
+              { currentColorValue && <HexColorPicker 
+                color={color} className="mt-2"  onChange={getColor} 
+              />}
+              <span className='mt-2'>
               <FoulardSM primaryColor={primaryColor} secondaryColor={secondaryColor} height={200}/>
+
+              </span>
             </div>
           <div className="row  d-flex justify-content-center align-items-center">
           <div className="mb-3 col-md-6">
